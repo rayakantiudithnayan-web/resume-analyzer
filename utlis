@@ -1,0 +1,24 @@
+import re
+
+def extract_skills(text):
+    skills = ["python", "machine learning", "data analysis", "c++", "java", "ai"]
+    found_skills = []
+
+    text = text.lower()
+
+    for skill in skills:
+        if skill in text:
+            found_skills.append(skill)
+
+    return found_skills
+
+
+def score_resume(text):
+    keywords = ["project", "experience", "skills", "education"]
+    score = 0
+
+    for word in keywords:
+        if word in text.lower():
+            score += 25
+
+    return score
